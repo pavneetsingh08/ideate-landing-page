@@ -6,9 +6,18 @@
     <title>Techfest | An Aetherial Renaissance</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <canvas id="stars"></canvas>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Join the Renaissance</h2>
+            <p>Registration for Techfest 2026 is opening soon. Stay tuned!</p>
+        </div>
+    </div>
+
     <header class="navbar">
         <div class="logo">TECHFEST</div>
         <nav>
@@ -16,11 +25,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#competitions">Competitions</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <button class="register-btn">Register Now</button>
+        <button class="register-btn" id="nav-register">Register Now</button>
     </header>
 
     <main>
@@ -30,8 +38,8 @@
                 <h1 class="title">An Aetherial<br><span>Renaissance</span></h1>
                 <p class="description">Experience Asia's Largest Science and Technology Festival. Where innovation meets ethereal beauty and the future is born.</p>
                 <div class="cta-buttons">
-                    <button class="primary-btn">Explore Events</button>
-                    <button class="secondary-btn">Watch Teaser</button>
+                    <a href="#events" class="primary-btn">Explore Events</a>
+                    <a href="#about" class="secondary-btn">Discover More</a>
                 </div>
             </div>
             <div class="hero-graphic">
@@ -40,11 +48,15 @@
                 <div class="ring ring-2"></div>
                 <div class="ring ring-3"></div>
             </div>
+            <div class="scroll-indicator">
+                <p>Scroll to explore</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
         </section>
 
-        <section id="about" class="about-section">
+        <section id="about" class="about-section scroll-fade">
             <h2 class="section-title">The Dawn of a New Era</h2>
-            <p>Join thousands of visionaries in a celebration of technology, science, and the limitless potential of the human mind. The renaissance is here.</p>
+            <p class="section-desc">Join thousands of visionaries in a celebration of technology, science, and the limitless potential of the human mind. The renaissance is here.</p>
             <div class="stats">
                 <div class="stat-item">
                     <h3>175K+</h3>
@@ -60,7 +72,72 @@
                 </div>
             </div>
         </section>
+
+        <section id="events" class="events-section scroll-fade">
+            <h2 class="section-title">Featured Events</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Robowars</h3>
+                    <p>Witness the ultimate clash of metal and code in the largest combat robotics competition in Asia.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>TechXpo</h3>
+                    <p>Explore groundbreaking prototypes, AI innovations, and futuristic tech from around the globe.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3>Speaker Sessions</h3>
+                    <p>Listen to Nobel Laureates, astronauts, and industry pioneers share their visions of tomorrow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitions" class="competitions-section scroll-fade">
+            <h2 class="section-title">Epic Competitions</h2>
+            <p class="section-desc">Test your skills against the brightest minds. Code, build, and innovate.</p>
+            <div class="competition-list">
+                <div class="comp-row">
+                    <div class="comp-info">
+                        <h4>Hackathons</h4>
+                        <p>48-hour intense coding challenges.</p>
+                    </div>
+                    <button class="comp-btn">Details</button>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-info">
+                        <h4>Ideates</h4>
+                        <p>Solve real-world problems with sustainable ideas.</p>
+                    </div>
+                    <button class="comp-btn">Details</button>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-info">
+                        <h4>Aerostrike</h4>
+                        <p>Design and maneuver autonomous drones.</p>
+                    </div>
+                    <button class="comp-btn">Details</button>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2 class="logo">TECHFEST</h2>
+            <p>IIT Bombay, Powai, Mumbai, Maharashtra 400076</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Techfest, IIT Bombay. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

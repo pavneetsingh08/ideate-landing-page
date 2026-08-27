@@ -52,12 +52,48 @@ window.addEventListener('resize', init);
 init();
 animate();
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Navbar Scroll Effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Scroll Fade-in Animation
+const fadeElements = document.querySelectorAll('.scroll-fade');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
     });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => observer.observe(el));
+
+// Modal Logic for Buttons
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close-btn');
+
+document.getElementById('nav-register').addEventListener('click', () => {
+    modal.classList.remove('hidden');
+});
+
+document.querySelectorAll('.comp-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+    }
 });
