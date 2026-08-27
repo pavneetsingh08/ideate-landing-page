@@ -5,7 +5,7 @@ A stunning, modern landing page designed for Techfest (Asia's Largest Science an
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpavneetsingh08%2Fideate-landing-page)
 
 ## 🌐 Live Demo
-*After deploying to Vercel, the live site URL will be updated here.*
+You can view the live site here: **[https://ideate-landing-page.vercel.app/](https://ideate-landing-page.vercel.app/)**
 
 ## Features
 - "An Aetherial Renaissance" theme implementation
